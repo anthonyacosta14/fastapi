@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GOAT</title>
+    <link rel="stylesheet" href="{{ url_for('static',path='css/principal.css') }}">
+</head>
+<body>
+    
+    <header>
+        <h1> Lionel Messi: El Rey del Fútbol </h1>
+        <nav>
+            <ul>
+                <li><a href="#partidos">Partidos Memorables</a></li>
+                <li><a href="#trofeos">Trofeos Ganados</a></li>
+                <li><a href="#imagenes">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="intro">
+            <h2>Un genio dentro y fuera de la cancha</h2>
+            <p>Lionel Messi, también conocido como "La Pulga", ha redefinido el fútbol con su magia, goles y habilidades únicas. Aquí celebramos algunos de sus momentos más icónicos.</p>
+        </section>
+
+        <section id="partidos">
+            <h2>🔥 Partidos Memorables contra el Real Madrid 🔥</h2>
+            <ul>
+                <li>27 de abril de 2011: Golazo en las semifinales de la Champions League.</li>
+                <li>23 de marzo de 2014: Hat-trick en el Santiago Bernabéu.</li>
+                <li>23 de abril de 2017: Gol en el último minuto mostrando su camiseta.</li>
+                <li>2 de mayo de 2009: Doblete en la histórica victoria 2-6.</li>
+                <li>mini cambio para el contenedorsdsd</li>
+            </ul>
+        </section>
+
+        <section id="trofeos">
+            <h2> Trofeos de Lionel Messi </h2>
+            <ol>
+                {% if trofeos %}
+                    {% for trofeo in trofeos %} 
+                        <li>{{ trofeo.nombre }}</li>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay trofeos</p>
+                {% endif %}
+            </ol>
+            
+            <h2>Añade tu mismo trofeos</h2>
+            <form action="{{ url_for('add_trofeos') }}" method="post">
+                <input type="text" name="nombre" placeholder="Nombre del trofeo" autocomplete="off" required>
+                <datalist id="trofeos-list">
+                    {% for trofeo in trofeos %}
+                    <option value="{{ trofeo.nombre }}"></option>
+                    {% endfor %}
+                </datalist>
+                <input type="submit" value="Añadir">
+            </form>
+
+            <form action="{{ url_for('delete_trofeo') }}" method="post">
+                <input type="number" name="id" placeholder="ID del trofeo a borrar" required>
+                <input type="submit" value="Borrar">
+            </form>
+
+            <form action="{{ url_for('update_trofeo') }}" method="post">
+                <label for="id">Selecciona el trofeo a actualizar:</label>
+                <select name="id" required>
+                    {% for trofeo in trofeos %}
+                    <option value="{{ trofeo.id }}">{{ trofeo.nombre }}</option>
+                    {% endfor %}
+                </select>
+            
+                <input type="text" name="nombre" placeholder="Nuevo nombre del trofeo" required>
+                <input type="submit" value="Actualizar">
+            </form>
+            
+
+
+
+        </section>
+
+        <section>
+            <h2>Enlaces a otras paginas</h2>
+            <ol>
+                <li><a href="/datos_personales">Datos Personales</a></li>
+                <li><a href="/equipos">Equipos</a></li>
+                <li><a href="/memes">Memes de él</a> </li>
+            </ol>
+        </section>
+
+        <section id="imagenes">
+            <h2> Galería de Lionel Messi </h2>
+            <div>
+                <img src="/static/imagenes/messie.jpg" alt="Lionel Messi celebrando" width="300">
+                <img src="/static/imagenes/messi-champions-k7vE-U150166125161ln-1248x770@RC.webp" alt="Messi levantando un trofeo" width="300">
+                <img src="/static/imagenes/jugandojpg.jpg" alt="Messi jugando" width="300">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Espero que te guste mi pagina rey</p>
+    </footer>
+   
+</body>
+</html>

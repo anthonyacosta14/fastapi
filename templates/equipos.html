@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ test_name }} {{ title }}</h1>
+
+<div class="team-details">
+   <h1>Equipos de Lionel Messi</h1> 
+   <ul> 
+    <li> <strong>F. C. Barcelona</strong> 
+      <ul> <li>Años: 2004-2021</li> 
+           <li>Partidos Jugados: 778</li> 
+           <li>Goles: 672</li> 
+           <li>Resumen: Messi debutó profesionalmente con el F. C. Barcelona en 2004 y se convirtió en el máximo goleador del club. Ganó múltiples títulos, incluidos 10 títulos de La Liga, 7 Copas del Rey, y 4 Champions League.</li> 
+           <li><img  src="/static/imagenes/barca.jpeg" ></li>
+      </ul> 
+    </li> 
+    <li> <strong>Paris Saint-Germain (PSG)</strong> 
+      <ul> <li>Años: 2021-2023</li> 
+           <li>Partidos Jugados: 75</li> 
+           <li>Goles: 32</li> 
+           <li>Resumen: Messi se unió al PSG en 2021 después de dejar el Barcelona. Ayudó al equipo a ganar la Ligue 1 y fue una pieza clave en su campaña en la Champions League.</li> 
+           <li><img src="/static/imagenes/psg.jpeg" ></li>
+      </ul> 
+    </li> 
+    <li> <strong>Inter Miami CF</strong> 
+      <ul class="inner-list"> <li>Años: 2023-presente</li> 
+           <li>Partidos Jugados: 38</li> 
+           <li>Goles: 25</li> 
+           <li>Resumen: En 2023, Messi se unió al Inter Miami CF, llevando su experiencia y talento a la Major League Soccer (MLS) de los Estados Unidos. Continúa siendo un jugador influyente y estrella del equipo.</li> 
+           <li><img    src="/static/imagenes/intermiami.avif"></li>
+          </ul> 
+    </li> 
+  </ul> 
+</div>
+
+{% endblock content %}

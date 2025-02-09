@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',path='css/style.css') }}" />
+     {% block css %}{% endblock %}
+    {% block head %}
+    <ul class="menu"> 
+      <li><a href="/">Home</a></li> 
+      <li><a href="/memes">Memes</a></li> 
+      <li><a href="/equipos">Equipos</a></li> 
+      <li><a href="/datos_personales">Datos Personales</a></li>
+    {% endblock %}
+
+</head>
+<body>
+  
+
+  {% block content %}
+  
+  {% endblock %}
+  
+  {% block footer %}
+    <footer>
+        <p>Espero que te haya gustado mi pagina rey</p>
+    </footer>
+  {% endblock %}
+   
+</body>
+</html>
+</html>
