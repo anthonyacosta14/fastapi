@@ -1,17 +1,11 @@
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>THEGOAT</title>
-  <link rel="stylesheet" href="{{ url_for('static',path="css/datos_personales.css") }}" />
- 
-</head>
-<body>
+{% extends "base.html" %}
 
-    <h1 >{{ nombre }}</h1>
+{% block title %}THEGOAT{% endblock %}
 
-   
+{% block content %}
+    <h1>{{ nombre }}</h1>
+
     <a href="{{ url_for('read_root') }}">Home</a>
-    <a href="{{ url_for('static',path="css/style.css") }}">Estilo css de la pagina principal</a>
     <div class="container"> 
       <h1>Datos Personales de Lionel Messi</h1> 
       <ul> 
@@ -31,16 +25,12 @@
           </ul> 
         </li> 
         <li><strong>Logros:</strong> 
-          <ul> <li>8 Balones de Oro</li> 
+          <ul> 
+            <li>8 Balones de Oro</li> 
             <li>8 Premios FIFA al Mejor Jugador del Mundo</li> 
             <li>6 Botas de Oro</li> 
           </ul> 
         </li>
-
-
       </ul> 
     </div>
-
-    
-</body>
-</html>
+{% endblock %}
